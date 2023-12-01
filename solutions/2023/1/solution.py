@@ -5,14 +5,10 @@ class Solution:
     @staticmethod
     def first_and_last_digits_sum(string_gen: Iterable[str]) -> int:
         rs = 0
-        xs = []
         for string in string_gen:
             digits = [int(char) for char in string if char in "0123456789"]
             if digits:
-                x = (digits[0] * 10) + digits[-1]
-                xs.append(x)
-                rs += x
-        print(xs)
+                rs += (digits[0] * 10) + digits[-1]
         return rs
 
     @staticmethod
