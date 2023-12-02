@@ -1,9 +1,10 @@
 from typing import Iterable, Self
 from io import TextIOWrapper
 
+
 class Solution:
-    @staticmethod
-    def first_and_last_digits_sum(string_gen: Iterable[str]) -> int:
+    @classmethod
+    def first_and_last_digits_sum(cls, string_gen: Iterable[str]) -> int:
         rs = 0
         for string in string_gen:
             digits = [int(char) for char in string if char in "0123456789"]
@@ -11,8 +12,9 @@ class Solution:
                 rs += (digits[0] * 10) + digits[-1]
         return rs
 
-    @staticmethod
+    @classmethod
     def replace_digitwords(
+        cls,
         line: str,
         mappings: dict[str, str] = {
             "one": "1",
